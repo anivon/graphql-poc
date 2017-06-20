@@ -1,0 +1,17 @@
+User:
+    type: object
+    config:
+        description: "An User"
+        fields:
+            id:
+                type: "Int!"
+                description: "The id of the user."
+            email:
+                type: "String"
+                description: "The email of the user."
+            firstname:
+                type: "String"
+                description: "The firstname of the user."
+            lastname:
+                type: "String"
+                description: "The lastname of the user."

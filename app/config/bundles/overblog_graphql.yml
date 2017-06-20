@@ -1,0 +1,17 @@
+overblog_graphql:
+    definitions:
+        mappings:
+            types:
+                -
+                    type: yml
+                    dir: "%kernel.root_dir%/../src/Car/Infra/Resources/GraphQL"
+                -
+                    type: yml
+                    dir: "%kernel.root_dir%/../src/User/Infra/Resources/GraphQL"
+                -
+                    type: yml
+                    dir: "%kernel.root_dir%/../src/Kernel/Infra/Resources/GraphQL"
+        schema:
+            query: Query
+            mutation: ~
+        config_validation: %kernel.debug%

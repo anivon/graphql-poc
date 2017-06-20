@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    mysql:
+        build: ./mysql
+        hostname: mysql-node-1
+        ports:
+            - 6603:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=my-secret-pw
+            - MYSQL_ROOT_HOST=%

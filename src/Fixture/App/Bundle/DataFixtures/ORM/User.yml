@@ -1,0 +1,6 @@
+User\Domain\User:
+    user_{1..10}:
+         __construct:
+            - <email()>
+            - <firstname()>
+            - <lastname()>

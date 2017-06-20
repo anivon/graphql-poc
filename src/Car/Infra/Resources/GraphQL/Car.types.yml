@@ -1,0 +1,11 @@
+Car:
+    type: object
+    config:
+        description: "A car."
+        fields:
+            id:
+                type: "Int!"
+                description: "The id of the car."
+            denomination:
+                type: "String"
+                description: "The denomination of the car."

@@ -1,0 +1,5 @@
+Car\Domain\Car:
+    car_{1..10}:
+         __construct:
+            - "@user*"
+            - <randomCarDenomination()>
