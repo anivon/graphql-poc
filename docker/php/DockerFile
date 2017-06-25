@@ -1,0 +1,22 @@
+FROM php:7-apache
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
+COPY php.ini /usr/local/etc/php/
+COPY graphql-poc.loc.conf /etc/apache2/sites-available/
+COPY parameters.yml /var/www/graphql-poc.loc/app/config/
+
+RUN a2enmod vhost_alias
+RUN a2enmod rewrite
+RUN a2ensite graphql-poc.loc.conf
+RUN service apache2 reload
+
+RUN apt-get update
+RUN apt-get install -y git unzip \
+	&& docker-php-ext-install pdo_mysql mysqli
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+WORKDIR /var/www/graphql-poc.loc
+RUN rm -rf /var/www/graphql-poc.loc/var/logs/*
+RUN rm -rf /var/www/graphql-poc.loc/var/cache/*

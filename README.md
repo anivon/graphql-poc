@@ -2,25 +2,31 @@ GraphQL-poc
 ===============
 
 A GraphQL backend Proof of Concept with Symfony 3
-# Installation
 
+# Installation
+## With Docker
 ```
-composer install (and use default values for parameters.yml)
+docker-compose up --build
+docker-compose exec php composer install
+docker-compose exec php bin/console d:d:c
+docker-compose exec php bin/console d:s:c
+docker-compose exec php bin/console h:d:f:l -b FixtureBundle -n
+```
+
+## Classic
+```
+composer install
 bin/console d:d:c
 bin/console d:s:c
 bin/console h:d:f:l -b FixtureBundle -n
 ```
 
-# Docker fast start
-Following command will run `mysql` server :
-```
-docker-compose up --build
-```
-
 # Play
-Go to `http://graphql-poc.loc/app_dev.php/graphiql` (adapt to your vhost)
+GraphiQL : http://localhost:8080/graphiql
 
-Play !
+ELK      : http://localhost:8081/
+
 
 ![](doc/image/graphiql.png)
 ![](doc/image/graphiql2.png)
+![](doc/image/elk.png)

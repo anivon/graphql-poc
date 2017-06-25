@@ -9,3 +9,16 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=my-secret-pw
             - MYSQL_ROOT_HOST=%
+    php:
+        build: ./php
+        ports:
+          - '8080:80'
+        volumes:
+          - ../:/var/www/graphql-poc.loc
+        depends_on:
+          - mysql
+          - elk
+    elk:
+        build: ./elk
+        ports:
+            - 8081:80

@@ -1,0 +1,6 @@
+FROM willdurand/elk
+
+COPY logstash/index_pattern.tar.gz /
+RUN tar zxvf index_pattern.tar.gz
+
+COPY logstash/gelf.conf /etc/logstash

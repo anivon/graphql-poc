@@ -23,6 +23,7 @@
         "php": ">=5.5.9",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
+        "graylog2/gelf-php": "^1.5",
         "incenteev/composer-parameter-handler": "^2.0",
         "overblog/graphql-bundle": "^0.8.5",
         "sensio/distribution-bundle": "^5.0.19",
